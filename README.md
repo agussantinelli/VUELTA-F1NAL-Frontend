@@ -99,9 +99,36 @@
   </a>
 </div>
 
-<hr />
+<hr>
 
 <h2 align="left">⚖️ Licencia y Propiedad Intelectual</h2>
+
 <p align="left">
-  <i>⚠️ <b>Restricción Firme:</b> Este proyecto es propiedad intelectual privada de Agustín Santinelli. Queda prohibida la reproducción o modificación del código sin autorización expresa.</i>
+  Este proyecto es <b>propiedad intelectual privada</b> de Agustín Santinelli. No se otorga ninguna licencia de uso abierto. Puedes consultar los términos detallados en el archivo 
+  <a href="LICENSE"><code>LICENSE</code></a> incluido en este repositorio.
 </p>
+
+<p align="left">
+  <i>
+    ⚠️ <b>Restricción Firme:</b> Queda terminantemente prohibida la copia, reproducción, distribución o modificación de este código sin autorización expresa del autor. Este repositorio se publica exclusivamente como exhibición de portafolio profesional.
+  </i>
+</p>
+<hr />
+
+<h2 align="left">🚫 Copyright Total</h2>
+
+<p align="left">
+  Este proyecto es propiedad intelectual exclusiva de <b>Agustín Santinelli</b>. No se aceptan contribuciones externas o forks para su uso público sin previo acuerdo por escrito.
+</p>
+
+<p align="left">
+  Si tienes sugerencias directas o deseas explorar colaboraciones comerciales, por favor contacta al autor: 
+  <a href="mailto:agustinsantinelli@gmail.com">agustinsantinelli@gmail.com</a>.
+</p>
+
+<hr />
+
+<div align="center">
+  <p><em>VUELTA F1NAL – Donde la historia se encuentra con la futuro.</em></p>
+</div>
+
