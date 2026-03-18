@@ -37,26 +37,41 @@
 <table>
   <thead>
     <tr>
-      <th align="left">Componente</th>
+      <th align="left">Categoría</th>
       <th align="left">Tecnología</th>
+      <th align="left">Propósito</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><b>Lenguaje Principal</b></td>
-      <td>🎯 Kotlin</td>
+      <td><strong>🎯 Core</strong></td>
+      <td>Kotlin (KMP)</td>
+      <td>Lenguaje principal y lógica compartida multiplataforma.</td>
     </tr>
     <tr>
-      <td><b>Backend Framework</b></td>
-      <td>⚙️ Ktor Framework</td>
+      <td><strong>⚙️ Backend</strong></td>
+      <td>Ktor Framework</td>
+      <td>Motor asíncrono para APIs, WebSockets y Server-Side.</td>
     </tr>
     <tr>
-      <td><b>Frontend Mobile</b></td>
-      <td>📱 Jetpack Compose (Android)</td>
+      <td><strong>📱 Frontend</strong></td>
+      <td>Jetpack Compose</td>
+      <td>UI declarativa nativa para una experiencia Android fluida.</td>
     </tr>
     <tr>
-      <td><b>Gestión de Proyecto</b></td>
-      <td>🏗️ Gradle Multi-project</td>
+      <td><strong>🏗️ Build System</strong></td>
+      <td>Gradle Multi-project</td>
+      <td>Gestión modular de dependencias y ciclos de compilación.</td>
+    </tr>
+    <tr>
+      <td><strong>💾 Persistencia</strong></td>
+      <td>SQLDelight / Room</td>
+      <td>Gestión de tipos seguros para bases de datos locales y remotas.</td>
+    </tr>
+    <tr>
+      <td><strong>🔌 Comunicación</strong></td>
+      <td>Ktor Client + Serialization</td>
+      <td>Consumo de datos y parseo JSON optimizado para Kotlin.</td>
     </tr>
   </tbody>
 </table>
