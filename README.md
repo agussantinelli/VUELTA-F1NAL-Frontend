@@ -34,12 +34,32 @@
 
 <h2>🛠️ Stack Tecnológico</h2>
 
-<ul>
-  <li><b>Lenguaje Principal:</b> Kotlin 🎯</li>
-  <li><b>Backend:</b> Ktor Framework ⚙️</li>
-  <li><b>Frontend Mobile:</b> Jetpack Compose (Android) 📱</li>
-  <li><b>Gestión de Proyecto:</b> Gradle Multi-project 🏗️</li>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th align="left">Componente</th>
+      <th align="left">Tecnología</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>Lenguaje Principal</b></td>
+      <td>🎯 Kotlin</td>
+    </tr>
+    <tr>
+      <td><b>Backend Framework</b></td>
+      <td>⚙️ Ktor Framework</td>
+    </tr>
+    <tr>
+      <td><b>Frontend Mobile</b></td>
+      <td>📱 Jetpack Compose (Android)</td>
+    </tr>
+    <tr>
+      <td><b>Gestión de Proyecto</b></td>
+      <td>🏗️ Gradle Multi-project</td>
+    </tr>
+  </tbody>
+</table>
 
 <hr/>
 
