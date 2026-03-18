@@ -1,8 +1,11 @@
-<h1 align="center">🏎️ VUELTA F1NAL</h1>
+<h1 align="center">🏎️ VUELTA F1NAL — Full Stack Project</h1>
 
 <div align="center">
-  <a href="https://github.com/agussantinelli/VUELTA-F1NAL-Frontend" target="_blank" style="text-decoration: none;">
+  <a href="https://github.com/agussantinelli/VUELTA-F1NAL-Frontend" target="_blank">
     <img src="https://img.shields.io/badge/💻%20Repo%20Frontend-Por%20Definir-FF1801?style=for-the-badge&logo=github&logoColor=white" alt="Repo Frontend"/>
+  </a>
+  <a href="https://github.com/agussantinelli/VUELTA-F1NAL-Backend" target="_blank">
+    <img src="https://img.shields.io/badge/⚙️%20Repo%20Backend-Por%20Definir-white?style=for-the-badge&logo=github&logoColor=black" alt="Repo Backend"/>
   </a>
   <a href="https://github.com/agussantinelli" target="_blank">
     <img src="https://img.shields.io/badge/👤%20Agustín%20Santinelli-agussantinelli-000000?style=for-the-badge&logo=github&logoColor=white" alt="Agus"/>
@@ -11,29 +14,87 @@
 
 <div align="center">
   <img src="https://img.shields.io/badge/Estado-En_Desarrollo-yellow?style=for-the-badge" alt="Status Badge"/>
+  <img src="https://img.shields.io/badge/Stack-Kotlin_Multiplatform-blueviolet?style=for-the-badge&logo=kotlin&logoColor=white" alt="Stack Badge"/>
   <img src="https://img.shields.io/badge/Copyright-All_Rights_Reserved-red?style=for-the-badge&logo=copyright&logoColor=white" alt="Copyright Badge"/>
 </div>
 
 <hr/>
 
-<h2>🎯 Objetivo del proyecto</h2>
+<h2>🎯 Objetivo del Proyecto</h2>
 
 <p>
-  <strong>VUELTA F1NAL</strong> es una plataforma integral diseñada para los apasionados de la <strong>Fórmula 1</strong>. El objetivo es centralizar décadas de historia, telemetría actual y un motor de predicciones avanzado en una interfaz moderna y fluida.
+  <strong>VUELTA F1NAL</strong> es una plataforma integral de alto rendimiento para entusiastas de la <strong>Fórmula 1</strong>. Este ecosistema unifica décadas de historia estadística con telemetría en tiempo real, todo impulsado por un motor de predicción avanzado. 
 </p>
 
 <p>
-  Buscamos ofrecer una experiencia visual de alto impacto que combine el rigor estadístico de los archivos históricos con la emoción del <strong>Live Timing</strong> y la capacidad de anticipar resultados mediante algoritmos nutridos.
+  La arquitectura permite una sincronización perfecta entre el rigor del procesamiento de datos en el servidor y una experiencia de usuario fluida y moderna en dispositivos móviles.
 </p>
 
 <hr/>
 
-<h2>🧱 Estructura de Secciones (FrontEnd)</h2>
+<h2>🛠️ Stack Tecnológico</h2>
+
+<ul>
+  <li><b>Lenguaje Principal:</b> Kotlin 🎯</li>
+  <li><b>Backend:</b> Ktor Framework ⚙️</li>
+  <li><b>Frontend Mobile:</b> Jetpack Compose (Android) 📱</li>
+  <li><b>Gestión de Proyecto:</b> Gradle Multi-project 🏗️</li>
+</ul>
+
+<hr/>
+
+<h2>📂 Estructura del Monorepo</h2>
+
+<p>El proyecto utiliza una estructura modular para maximizar la reutilización de código:</p>
 
 <table>
   <thead>
     <tr>
       <th align="left">Módulo</th>
+      <th align="left">Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>📂 shared/</code></td>
+      <td><b>Código Común:</b> Contiene los modelos de datos, DTOs y lógica de negocio compartida entre cliente y servidor.</td>
+    </tr>
+    <tr>
+      <td><code>📂 compose-app/</code></td>
+      <td><b>Frontend Android:</b> Aplicación nativa desarrollada con Jetpack Compose para una UI reactiva.</td>
+    </tr>
+    <tr>
+      <td><code>📂 ktor-server/</code></td>
+      <td><b>Backend Core:</b> Servidor Ktor encargado del procesamiento, predicciones y suministro de API.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr/>
+
+<h2>🧠 El Cerebro: Motor de Predicción (Backend)</h2>
+
+<p>
+  El núcleo lógico reside en <code>ktor-server/</code>, diseñado para transformar Big Data histórico en insights accionables:
+</p>
+
+<ul>
+  <li><b>Análisis de Micro-Sectores:</b> Evaluación técnica de fortalezas de chasis vs motor.</li>
+  <li><b>Factor Climatológico:</b> Algoritmos que ajustan el rendimiento según condiciones de pista.</li>
+  <li><b>Fiabilidad Mecánica:</b> Modelos probabilísticos de DNF basados en desgaste de componentes.</li>
+  <li><b>Data Ingestion:</b> Normalización de fuentes históricas (1950-Presente) y feeds de telemetría en vivo.</li>
+</ul>
+
+<hr/>
+
+<h2>📱 Experiencia de Usuario (Frontend)</h2>
+
+<p>La interfaz en <code>compose-app/</code> traduce la complejidad de los datos en una narrativa visual:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Módulo UI</th>
       <th align="left">Funcionalidad</th>
       <th align="left">Estado</th>
     </tr>
@@ -45,45 +106,17 @@
       <td>⏳ Planeado</td>
     </tr>
     <tr>
-      <td><strong>Archivo Histórico</strong></td>
-      <td>Explorador de pilotos, constructores y circuitos desde 1950.</td>
-      <td>🛠️ En Diseño</td>
-    </tr>
-    <tr>
       <td><strong>Predictor UI</strong></td>
       <td>Interfaz interactiva para visualizar probabilidades de podio.</td>
       <td>🚀 Prioridad</td>
     </tr>
     <tr>
-      <td><strong>Comparador 1vs1</strong></td>
-      <td>Herramienta visual para contrastar el rendimiento de dos pilotos.</td>
-      <td>⏳ Planeado</td>
+      <td><strong>Archivo Histórico</strong></td>
+      <td>Explorador de pilotos, constructores y circuitos.</td>
+      <td>🛠️ En Diseño</td>
     </tr>
   </tbody>
 </table>
-
-<hr/>
-
-<h2>📄 Contenido y secciones principales</h2>
-
-<h3>📊 Telemetría y Resultados</h3>
-<ul>
-  <li>Visualización de <strong>resultados por Gran Premio</strong> con degradación de neumáticos y paradas en boxes.</li>
-  <li>Tablas de posiciones de <strong>Pilotos y Constructores</strong> actualizadas al instante.</li>
-  <li>Calendario interactivo con horarios locales y detalles del circuito (longitud, zonas DRS).</li>
-</ul>
-
-<h3>🔮 Motor de Predicción</h3>
-<ul>
-  <li>Visualización de <strong>probabilidades de victoria</strong> basadas en el algoritmo del backend.</li>
-  <li>Ajuste manual de variables visuales: <i>¿Qué pasa si llueve?</i> o <i>¿Si un piloto penaliza?</i></li>
-</ul>
-
-<h3>🏆 Salón de la Fama y Cultura</h3>
-<ul>
-  <li>Sección dedicada a <strong>Leyendas de la F1</strong>: biografía, títulos y estadísticas clave.</li>
-  <li>Evolución técnica de los monoplazas a lo largo de las décadas.</li>
-</ul>
 
 <hr/>
 
@@ -102,30 +135,17 @@
 
 <p align="left">
   Este proyecto es <b>propiedad intelectual privada</b> de Agustín Santinelli. No se otorga ninguna licencia de uso abierto. Puedes consultar los términos detallados en el archivo 
-  <a href="LICENSE"><code>LICENSE</code></a> incluido en este repositorio.
+  <a href="LICENSE"><code>LICENSE</code></a>.
 </p>
 
 <p align="left">
   <i>
-    ⚠️ <b>Restricción Firme:</b> Queda terminantemente prohibida la copia, reproducción, distribución o modificación de este código sin autorización expresa del autor. Este repositorio se publica exclusivamente como exhibición de portafolio profesional.
+    ⚠️ <b>Restricción Firme:</b> Queda terminantemente prohibida la copia, reproducción, distribución o modificación de este código sin autorización expresa del autor.
   </i>
-</p>
-<hr />
-
-<h2 align="left">🚫 Copyright Total</h2>
-
-<p align="left">
-  Este proyecto es propiedad intelectual exclusiva de <b>Agustín Santinelli</b>. No se aceptan contribuciones externas o forks para su uso público sin previo acuerdo por escrito.
-</p>
-
-<p align="left">
-  Si tienes sugerencias directas o deseas explorar colaboraciones comerciales, por favor contacta al autor: 
-  <a href="mailto:agustinsantinelli@gmail.com">agustinsantinelli@gmail.com</a>.
 </p>
 
 <hr />
 
 <div align="center">
-  <p><em>VUELTA F1NAL – Donde la historia se encuentra con la futuro.</em></p>
+  <p><em>VUELTA F1NAL – Donde la historia se encuentra con el futuro.</em></p>
 </div>
-
