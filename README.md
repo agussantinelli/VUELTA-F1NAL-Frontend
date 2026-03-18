@@ -75,6 +75,16 @@
       <td>Ktor Client + Serialization</td>
       <td>Consumo de datos y parseo JSON optimizado para Kotlin.</td>
     </tr>
+    <tr>
+      <td><strong>🏗️ Build System</strong></td>
+      <td>Gradle</td>
+      <td>Automatización de compilación y gestión modular de dependencias.</td>
+    </tr>
+    <tr>
+      <td><strong>💻 Tooling</strong></td>
+      <td>IntelliJ IDEA / Android Studio</td>
+      <td>Entorno de desarrollo (IDE) optimizado para el ecosistema Kotlin.</td>
+    </tr>
   </tbody>
 </table>
 
