@@ -33,19 +33,28 @@ import org.slf4j.event.*
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver
 
 fun Application.configureRouting() {
+
     routing {
+        // Ruta de salud del motor (Health Check)
         get("/") {
-            call.respondText("🏎️ VUELTA F1NAL Engine: Online y rugiendo!")
+            call.respondText(
+                text = "🏎️ VUELTA F1NAL Engine: Online y rugiendo!",
+                status = HttpStatusCode.OK
+            )
         }
 
         get("/telemetry/verstappen") {
-            val data = mapOf(
+            val telemetryData = mapOf(
                 "driver" to "Max Verstappen",
+                "team" to "Red Bull Racing",
                 "speed" to "324 km/h",
-                "lap" to "1:24.562",
-                "status" to "DRS Enabled"
+                "lap_time" to "1:24.562",
+                "drs_active" to true,
+                "tire_compound" to "Soft",
+                "last_update" to System.currentTimeMillis()
             )
-            call.respond(data)
+
+            call.respond(telemetryData)
         }
     }
 }
