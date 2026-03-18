@@ -1,0 +1,54 @@
+# --- IDE & Editores ---
+.idea/
+*.iml
+*.iws
+.vscode/
+*.swp
+*.DS_Store
+out/
+
+# --- Gradle & Build System ---
+.gradle/
+build/
+*/build/
+bin/
+gradle-app.setting
+!gradle-wrapper.jar
+
+# --- Android (Jetpack Compose) ---
+*.ap_
+*.apk
+*.dex
+local.properties
+.navigation/
+captures/
+.externalNativeBuild
+.cxx
+/screenshots
+/diffs
+
+# --- Backend (Ktor/JVM) ---
+# Logs de ejecución
+*.log
+# Configuraciones locales de Ktor que podrían tener secrets
+application.local.conf
+.env
+
+# --- Kotlin Multiplatform / Shared ---
+.konan/
+kotlin-js-store/
+
+# --- Sistema y Temporales ---
+Thumbs.db
+desktop.ini
+.DS_Store
+*.tmp
+*.temp
+
+# --- Seguridad & Secretos (CRÍTICO) ---
+# Nunca subas estos archivos si los creas para API Keys de F1
+.env*
+secrets.xml
+google-services.json
+*.keystore
+*.jks
