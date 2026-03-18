@@ -14,6 +14,7 @@
   <img src="https://img.shields.io/badge/Jetpack%20Compose-Frontend-4285F4?style=for-the-badge&logo=jetpackcompose&logoColor=white" alt="Compose Badge"/>
   <img src="https://img.shields.io/badge/Ktor-Backend-08c3d4?style=for-the-badge&logo=ktor&logoColor=white" alt="Ktor Badge"/>
   <img src="https://img.shields.io/badge/IntelliJ_IDEA-IDE-000000?style=for-the-badge&logo=intellijidea&logoColor=white" alt="IntelliJ IDEA Badge"/>
+  <img src="https://img.shields.io/badge/Gradle-Build_System-02303A?style=for-the-badge&logo=gradle&logoColor=white" alt="Gradle Badge"/>
 </div>
 
 <div align="center">
@@ -73,6 +74,16 @@
       <td><strong>🔌 Comunicación</strong></td>
       <td>Ktor Client + Serialization</td>
       <td>Consumo de datos y parseo JSON optimizado para Kotlin.</td>
+    </tr>
+    <tr>
+      <td><strong>🏗️ Build System</strong></td>
+      <td>Gradle</td>
+      <td>Automatización de compilación y gestión modular de dependencias.</td>
+    </tr>
+    <tr>
+      <td><strong>💻 Tooling</strong></td>
+      <td>IntelliJ IDEA / Android Studio</td>
+      <td>Entorno de desarrollo (IDE) optimizado para el ecosistema Kotlin.</td>
     </tr>
   </tbody>
 </table>
