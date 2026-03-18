@@ -1,11 +1,8 @@
-<h1 align="center">🏎️ VUELTA F1NAL – FrontEnd</h1>
+<h1 align="center">🏎️ VUELTA F1NAL</h1>
 
 <div align="center">
   <a href="https://github.com/agussantinelli/VUELTA-F1NAL-Frontend" target="_blank" style="text-decoration: none;">
     <img src="https://img.shields.io/badge/💻%20Repo%20Frontend-Por%20Definir-FF1801?style=for-the-badge&logo=github&logoColor=white" alt="Repo Frontend"/>
-  </a>
-  <a href="https://github.com/agussantinelli/VUELTA-F1NAL-Backend" target="_blank" style="text-decoration: none;">
-    <img src="https://img.shields.io/badge/⚙️%20Repo%20Backend-Por%20Definir-white?style=for-the-badge&logo=github&logoColor=black" alt="Repo Backend"/>
   </a>
   <a href="https://github.com/agussantinelli" target="_blank">
     <img src="https://img.shields.io/badge/👤%20Agustín%20Santinelli-agussantinelli-000000?style=for-the-badge&logo=github&logoColor=white" alt="Agus"/>
