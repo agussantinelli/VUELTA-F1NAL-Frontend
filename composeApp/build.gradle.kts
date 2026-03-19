@@ -20,10 +20,18 @@ android {
         compose = true
     }
 
-    // Importante para no chocar con el Engine
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.11"
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_21
         targetCompatibility = JavaVersion.VERSION_21
+    }
+
+    // También es buena práctica asegurar el target de Kotlin aquí
+    kotlinOptions {
+        jvmTarget = "21"
     }
 }
 
