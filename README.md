@@ -140,8 +140,6 @@
 
 <hr>
 
-<hr>
-
 <h2>📂 Estructura del Proyecto</h2>
 
 <pre><code>VUELTA-F1NAL/
