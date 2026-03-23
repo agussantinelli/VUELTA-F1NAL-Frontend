@@ -140,28 +140,25 @@
 
 <hr>
 
-<h2>📂 Estructura del Monorepo</h2>
+<hr>
 
-<p>El proyecto utiliza una estructura modular para maximizar la reutilización de código:</p>
+<h2>📂 Estructura del Proyecto</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th align="left">Módulo</th>
-      <th align="left">Descripción</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>📂 engine/</code></td>
-      <td><b>Backend Core:</b> Servidor Ktor encargado del procesamiento, predicciones y suministro de API.</td>
-    </tr>
-    <tr>
-      <td><code>📂 composeApp/</code></td>
-      <td><b>Frontend Android:</b> Aplicación nativa desarrollada con Jetpack Compose para una UI reactiva.</td>
-    </tr>
-  </tbody>
-</table>
+<pre><code>VUELTA-F1NAL/
+├── composeApp/                                       # Frontend: Aplicación Android (Jetpack Compose)
+│   ├── src/main/java/com/vueltaf1nal/app/
+│   │   └── MainActivity.kt                           # Punto de entrada de la aplicación móvil
+│   └── src/main/res/                                 # Recursos Android (layouts, themes, drawables)
+├── engine/                                           # Backend: Servidor Ktor (Kotlin JVM)
+│   ├── src/main/kotlin/
+│   │   ├── Application.kt                            # Configuración principal del servidor
+│   │   └── Routing.kt                                # Definición de endpoints y lógica de ruteo
+│   └── src/main/resources/                           # Configuración estática y assets del backend
+├── gradle/                                           # Configuración del Gradle Wrapper
+├── build.gradle.kts                                  # Configuración de compilación raíz
+├── settings.gradle.kts                               # Definición de módulos del proyecto
+└── README.md                                         # Documentación principal del ecosistema
+</code></pre>
 
 <hr>
 
