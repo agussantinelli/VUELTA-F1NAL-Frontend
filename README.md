@@ -92,21 +92,6 @@
 
 <hr>
 
-<h2>🧠 El Cerebro: Motor de Predicción (Backend)</h2>
-
-<p>
-  El núcleo lógico reside en <code>engine/</code>, diseñado para transformar Big Data histórico en insights accionables:
-</p>
-
-<ul>
-  <li><b>Análisis de Micro-Sectores:</b> Evaluación técnica de fortalezas de chasis vs motor.</li>
-  <li><b>Factor Climatológico:</b> Algoritmos que ajustan el rendimiento según condiciones de pista.</li>
-  <li><b>Fiabilidad Mecánica:</b> Modelos probabilísticos de DNF basados en desgaste de componentes.</li>
-  <li><b>Data Ingestion:</b> Normalización de fuentes históricas (1950-Presente) y feeds de telemetría en vivo.</li>
-</ul>
-
-<hr>
-
 <h2>📱 Experiencia de Usuario (Frontend)</h2>
 
 <p>La interfaz en <code>composeApp/</code> traduce la complejidad de los datos en una narrativa visual:</p>
@@ -137,6 +122,21 @@
     </tr>
   </tbody>
 </table>
+
+<hr>
+
+<h2>🧠 El Cerebro: Motor de Predicción (Backend)</h2>
+
+<p>
+  El núcleo lógico reside en <code>engine/</code>, diseñado para transformar Big Data histórico en insights accionables:
+</p>
+
+<ul>
+  <li><b>Análisis de Micro-Sectores:</b> Evaluación técnica de fortalezas de chasis vs motor.</li>
+  <li><b>Factor Climatológico:</b> Algoritmos que ajustan el rendimiento según condiciones de pista.</li>
+  <li><b>Fiabilidad Mecánica:</b> Modelos probabilísticos de DNF basados en desgaste de componentes.</li>
+  <li><b>Data Ingestion:</b> Normalización de fuentes históricas (1950-Presente) y feeds de telemetría en vivo.</li>
+</ul>
 
 <hr>
 
