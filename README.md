@@ -200,13 +200,14 @@
 <p>Este proyecto utiliza un sistema de <strong>Skills</strong> (guías avanzadas) para asegurar que cualquier desarrollo (humano o por IA) siga estrictamente los estándares arquitectónicos del proyecto:</p>
 
 <ul>
-    <li><strong>🏗️ Arquitectura Modular:</strong> Reglas estrictas sobre la separación de capas (Data, Domain, UI) y el flujo de dependencias.</li>
-    <li><strong>📱 Compose State Management:</strong> Mejores prácticas para la gestión de estado con <code>MutableStateFlow</code>, State Hoisting y arquitectura MVI/MVVM.</li>
-    <li><strong>🌊 Flow & Coroutines:</strong> Estándar para operaciones asíncronas seguras, manejo de scopes (ViewModel) y recolección de flujos con ciclo de vida.</li>
-    <li><strong>📐 Adaptive UI:</strong> Estrategias para un diseño responsivo y adaptable a diferentes tamaños de pantalla (Compact, Medium, Expanded).</li>
-    <li><strong>⚙️ Ktor Engine Logic:</strong> Normas para el desarrollo del backend, incluyendo ruteo modular, serialización eficiente y lógica de predicción aislada.</li>
-    <li><strong>🧹 Clean Structure:</strong> Organización coherente de paquetes y nomenclatura estándar para componentes declarativos en Jetpack Compose.</li>
-    <li><strong>🛠️ Skill Generator:</strong> Herramienta automatizada para la creación de nuevas guías que expandan el conocimiento operativo del sistema.</li>
+    <li><strong>🏗️ Arquitectura Modular:</strong> Reglas sobre la separación de capas (Data, Domain, UI) y el principio de <b>Granularidad (Uno por Clase)</b> para evitar dependencias cruzadas.</li>
+    <li><strong>📱 Compose State Management:</strong> Gestión de estado reactivo con <code>MutableStateFlow</code>, State Hoisting y arquitectura UDF (Unidirectional Data Flow).</li>
+    <li><strong>🌊 Flow & Coroutines:</strong> Estándar para operaciones asíncronas, manejo de scopes y recolección de flujos segura con el ciclo de vida de Android.</li>
+    <li><strong>📐 Adaptive UI:</strong> Estrategias para diseños responsivos utilizando <code>WindowSizeClass</code> para (Compact, Medium, Expanded).</li>
+    <li><strong>🧹 Clean Structure (Frontend):</strong> Organización de paquetes en <code>composeApp/</code> y estándares de nomenclatura para componentes y ViewModels.</li>
+    <li><strong>⚙️ Clean Structure (Backend):</strong> Organización modular del <code>engine/</code> (Routes -> Repositories -> Mappers -> DTOs).</li>
+    <li><strong>🚀 Ktor Engine Logic:</strong> Normas para el desarrollo del motor, incluyendo serialización eficiente y aislamiento de la lógica de predicción.</li>
+    <li><strong>🛠️ Skill Generator:</strong> Herramienta para la creación de nuevas guías que expandan el conocimiento operativo del sistema.</li>
 </ul>
 
 <hr>
