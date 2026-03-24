@@ -8,8 +8,11 @@ description: Backend-specific rules for the engine/ module (routing, serializati
 Rules for maintaining the VUELTA F1NAL backend robustly.
 
 ## Guidelines
-1. **Modular Routes**: Define routing in separate extension functions located in `com.vueltaf1nal.routes`.
-2. **Type Safety**: Use Kotlin Serialization for all JSON contracts.
-3. **Predictions**: All algorithm-heavy logic should be isolated in the `domain` package of the engine.
-4. **Asynchrony**: Use Ktor's native support for Coroutines for non-blocking I/O.
-5. **JSON Config**: Maintain `ignoreUnknownKeys = true` to ensure backward compatibility with API changes.
+1. **Modular Routes**: Define routing in separate extension functions on `Route` located in `com.vueltaf1nal.routes` (e.g., `ResultsRoutes.kt`).
+2. **Layered Responsibility**:
+   - `Routes` handles HTTP requests and calls Repositories.
+   - `Repositories` (in `data.repositories`) handle logic and use `Mappers` to return `DomainModels`.
+   - `DTOs` (in `data.dtos`) are used only for serialization at the edge.
+3. **Type Safety**: Use Kotlin Serialization for all JSON contracts.
+4. **Predictions**: All algorithm-heavy logic should be isolated in the `domain.models` or specialized domain services.
+5. **JSON Config**: Maintain `ignoreUnknownKeys = true` in Ktor content negotiation.
