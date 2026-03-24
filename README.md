@@ -149,13 +149,20 @@
 <pre><code>VUELTA-F1NAL/
 ├── composeApp/                                       # Frontend: Aplicación Android (Jetpack Compose)
 │   ├── src/main/java/com/vueltaf1nal/app/
-│   │   └── MainActivity.kt                           # Punto de entrada de la aplicación móvil
+│   │   ├── data/                                     # Capa de Datos: DTOs, Repositorios (Impl), APIs
+│   │   │   ├── models/api/                           # DTOs (Serialización)
+│   │   │   ├── remote/                               # Servicios Ktor (F1ApiService, ResultsService, etc.)
+│   │   │   └── repository/                            # Implementaciones de Repositorios
+│   │   ├── domain/                                   # Capa de Dominio: Modelos, Interfaces
+│   │   │   ├── models/                               # Modelos de Negocio
+│   │   │   └── repository/                            # Interfaces de Repositorios (Abstracción)
+│   │   ├── ui/                                       # Capa de UI: Screens, ViewModels, Theme
+│   │   │   ├── screens/                              # Composable Screens (ResultListScreen, TopSpeedsScreen)
+│   │   │   ├── theme/                                # Design System (Color, Type, Theme)
+│   │   │   └── viewmodel/                            # Gestión de Estado (MainViewModel)
+│   │   └── MainActivity.kt                           # Punto de entrada (Host de Navegación)
 │   └── src/main/res/                                 # Recursos Android (layouts, themes, drawables)
 ├── engine/                                           # Backend: Servidor Ktor (Kotlin JVM)
-│   ├── src/main/kotlin/
-│   │   ├── Application.kt                            # Configuración principal del servidor
-│   │   └── Routing.kt                                # Definición de endpoints y lógica de ruteo
-│   └── src/main/resources/                           # Configuración estática y assets del backend
 ├── gradle/                                           # Configuración del Gradle Wrapper
 ├── build.gradle.kts                                  # Configuración de compilación raíz
 ├── settings.gradle.kts                               # Definición de módulos del proyecto
