@@ -1,6 +1,6 @@
 package com.vueltaf1nal.app.data.remote
 
-import com.vueltaf1nal.app.data.models.api.DriverResultDto
+import com.vueltaf1nal.app.data.dtos.DriverResultDto
 import io.ktor.client.call.*
 import io.ktor.client.request.*
 

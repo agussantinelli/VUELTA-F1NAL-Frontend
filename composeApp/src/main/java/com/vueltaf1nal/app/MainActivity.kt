@@ -14,8 +14,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.vueltaf1nal.app.data.remote.ResultsService
 import com.vueltaf1nal.app.data.remote.TopSpeedsService
-import com.vueltaf1nal.app.data.repository.ResultsRepositoryImpl
-import com.vueltaf1nal.app.data.repository.TopSpeedsRepositoryImpl
+import com.vueltaf1nal.app.data.repositories.ResultsRepository
+import com.vueltaf1nal.app.data.repositories.TopSpeedsRepository
+import com.vueltaf1nal.app.data.mappers.ResultsMapper
+import com.vueltaf1nal.app.data.mappers.TopSpeedsMapper
 import com.vueltaf1nal.app.ui.screens.*
 import com.vueltaf1nal.app.ui.theme.*
 import com.vueltaf1nal.app.ui.viewmodel.*
@@ -26,8 +28,8 @@ class MainActivity : ComponentActivity() {
     private val viewModel: MainViewModel by viewModels {
         object : ViewModelProvider.Factory {
             override fun <T : ViewModel> create(modelClass: Class<T>): T {
-                val resultsRepository = ResultsRepositoryImpl(ResultsService())
-                val topSpeedsRepository = TopSpeedsRepositoryImpl(TopSpeedsService())
+                val resultsRepository: ResultsRepository = ResultsMapper(ResultsService())
+                val topSpeedsRepository: TopSpeedsRepository = TopSpeedsMapper(TopSpeedsService())
                 return MainViewModel(resultsRepository, topSpeedsRepository) as T
             }
         }

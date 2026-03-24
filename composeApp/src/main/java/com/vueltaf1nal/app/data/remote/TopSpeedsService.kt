@@ -1,6 +1,6 @@
 package com.vueltaf1nal.app.data.remote
 
-import com.vueltaf1nal.app.data.models.api.MaxSpeedDto
+import com.vueltaf1nal.app.data.dtos.MaxSpeedDto
 import io.ktor.client.call.*
 import io.ktor.client.request.*
 

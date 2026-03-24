@@ -4,8 +4,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.vueltaf1nal.app.domain.models.DriverResult
 import com.vueltaf1nal.app.domain.models.MaxSpeed
-import com.vueltaf1nal.app.domain.repository.ResultsRepository
-import com.vueltaf1nal.app.domain.repository.TopSpeedsRepository
+import com.vueltaf1nal.app.data.repositories.ResultsRepository
+import com.vueltaf1nal.app.data.repositories.TopSpeedsRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
