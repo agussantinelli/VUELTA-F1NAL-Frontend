@@ -16,11 +16,11 @@ A well-organized codebase ensures VUELTA F1NAL is maintains racing speed.
    - `ui.screens`: Screen-level Composables.
    - `ui.viewmodel`: State management and UI logic.
    - `ui.theme`: Design system (Color, Type, Theme).
-   - `data.models.api`: DTOs for network/serialization.
+   - `data.dtos`: DTOs for network/serialization.
    - `data.remote`: Ktor services and network clients.
-   - `data.repository`: Repository implementations.
+   - `data.mappers`: Implementation of repository interfaces + transformation logic.
+   - `data.repositories`: Repository interfaces (Abstractions).
    - `domain.models`: Business models (Entities).
-   - `domain.repository`: Repository interfaces (Abstractions).
 3. **Naming**:
    - Composables: PascalCase (e.g., `RaceCard`).
    - ViewModels: PascalCase ending in `ViewModel`.
