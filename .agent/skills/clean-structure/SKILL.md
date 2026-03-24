@@ -12,11 +12,15 @@ A well-organized codebase ensures VUELTA F1NAL is maintains racing speed.
    - `:composeApp`: Android UI and platform-specific logic.
    - `:engine`: Ktor backend and prediction core.
 2. **Package Organization (App)**:
-   - `ui.components`: Reusable Composables.
+   - `ui.components`: Reusable UI elements (Buttons, Cards).
    - `ui.screens`: Screen-level Composables.
+   - `ui.viewmodel`: State management and UI logic.
    - `ui.theme`: Design system (Color, Type, Theme).
-   - `data`: Repositories and local/remote data sources.
-   - `domain`: Use Cases and Business Models.
+   - `data.models.api`: DTOs for network/serialization.
+   - `data.remote`: Ktor services and network clients.
+   - `data.repository`: Repository implementations.
+   - `domain.models`: Business models (Entities).
+   - `domain.repository`: Repository interfaces (Abstractions).
 3. **Naming**:
    - Composables: PascalCase (e.g., `RaceCard`).
    - ViewModels: PascalCase ending in `ViewModel`.
