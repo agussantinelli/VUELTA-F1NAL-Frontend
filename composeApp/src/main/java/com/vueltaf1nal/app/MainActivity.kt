@@ -1,10 +1,33 @@
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.graphics.painter.Painter
+package com.vueltaf1nal.app
+
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.clickable
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.vueltaf1nal.app.ui.theme.*
+import io.ktor.client.*
+import io.ktor.client.call.*
+import io.ktor.client.engine.okhttp.*
+import io.ktor.client.plugins.contentnegotiation.*
+import io.ktor.client.request.*
+import io.ktor.serialization.kotlinx.json.*
+import kotlinx.serialization.Serializable
+import kotlinx.serialization.json.Json
 
+@Serializable
 data class DriverResult(
     val pos: Int,
     val name: String,
@@ -19,25 +42,59 @@ sealed class Screen {
     data class Details(val driver: DriverResult) : Screen()
 }
 
+// Cliente HTTP Global (Simple para este MVP)
+val client = HttpClient(OkHttp) {
+    install(ContentNegotiation) {
+        json(Json {
+            ignoreUnknownKeys = true
+        })
+    }
+}
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             VueltaF1nalTheme {
                 var currentScreen by remember { mutableStateOf<Screen>(Screen.List) }
+                var results by remember { mutableStateOf<List<DriverResult>>(emptyList()) }
+                var isLoading by remember { mutableStateOf(true) }
+                var error by remember { mutableStateOf<String?>(null) }
+
+                // Fetch data from Backend
+                LaunchedEffect(Unit) {
+                    try {
+                        results = client.get("http://10.0.2.2:8080/api/results").body()
+                        isLoading = false
+                    } catch (e: Exception) {
+                        error = "No se pudo conectar con el motor: ${e.message}"
+                        isLoading = false
+                    }
+                }
 
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = DeepNavy
                 ) {
-                    when (val screen = currentScreen) {
-                        is Screen.List -> ResultListScreen(
-                            onSeeDetails = { currentScreen = Screen.Details(it) }
-                        )
-                        is Screen.Details -> TopSpeedDetailScreen(
-                            driver = screen.driver,
-                            onBack = { currentScreen = Screen.List }
-                        )
+                    if (isLoading) {
+                        Box(contentAlignment = Alignment.Center) {
+                            CircularProgressIndicator(color = RacingRed)
+                        }
+                    } else if (error != null) {
+                        Box(contentAlignment = Alignment.Center) {
+                            Text(text = error!!, color = Color.White, modifier = Modifier.padding(20.dp))
+                        }
+                    } else {
+                        when (val screen = currentScreen) {
+                            is Screen.List -> ResultListScreen(
+                                results = results,
+                                onSeeDetails = { currentScreen = Screen.Details(it) }
+                            )
+                            is Screen.Details -> TopSpeedDetailScreen(
+                                driver = screen.driver,
+                                onBack = { currentScreen = Screen.List }
+                            )
+                        }
                     }
                 }
             }
@@ -46,17 +103,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun ResultListScreen(onSeeDetails: (DriverResult) -> Unit) {
-    val results = remember {
-        listOf(
-            DriverResult(1, "Max Verstappen", "Red Bull Racing", "1:23:45.678", 325.4, 44),
-            DriverResult(2, "Lando Norris", "McLaren", "+2.456s", 328.1, 56),
-            DriverResult(3, "Charles Leclerc", "Ferrari", "+5.123s", 322.9, 52),
-            DriverResult(4, "Oscar Piastri", "McLaren", "+12.678s", 324.5, 48),
-            DriverResult(5, "Lewis Hamilton", "Mercedes", "+15.901s", 321.2, 58)
-        )
-    }
-
+fun ResultListScreen(results: List<DriverResult>, onSeeDetails: (DriverResult) -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -64,18 +111,9 @@ fun ResultListScreen(onSeeDetails: (DriverResult) -> Unit) {
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        // Logo en vez de texto
-        // Nota: El archivo debe estar en res/drawable/logo_minimalista.png
         Box(modifier = Modifier.size(120.dp), contentAlignment = Alignment.Center) {
-            // Usamos un placeholder si el resource no existe aun
             Text("LOGO", color = RacingRed, fontWeight = FontWeight.Bold)
-            /* 
-            Image(
-                painter = painterResource(id = R.drawable.logo_minimalista), 
-                contentDescription = "Logo",
-                modifier = Modifier.size(80.dp)
-            )
-            */
+            // Image(painter = painterResource(id = R.drawable.logo_minimalista), ...)
         }
         
         Text(
@@ -159,14 +197,7 @@ fun TopSpeedDetailScreen(driver: DriverResult, onBack: () -> Unit) {
         Spacer(modifier = Modifier.height(48.dp))
 
         TextButton(onClick = onBack) {
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                Text("← VOLVER A RESULTADOS", color = AeroSilver, fontWeight = FontWeight.Bold)
-            }
+            Text("← VOLVER A RESULTADOS", color = AeroSilver, fontWeight = FontWeight.Bold)
         }
     }
-}
-
-@Composable
-fun F1TelemetryTheme(content: @Composable () -> Unit) {
-    MaterialTheme(content = content)
 }
