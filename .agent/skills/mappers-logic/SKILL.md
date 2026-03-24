@@ -7,7 +7,7 @@ In this architecture, the data layer uses "Mappers" to bridge the gap between ex
 
 ## Naming Conventions
 - **Folder**: `data/mappers/`
-- **Classes**: `*Mapper` (e.g., `ResultsMapper`, `TopSpeedsMapper`).
+- **Classes**: `*Mapper` (e.g., `ResultsMapper`, `TopSpeedsMapper`). One mapper per core domain class/repository implementation.
 - **Functions**: Extension functions named `toDomain()` and `toDto()`.
 
 ## Implementation Rules
@@ -15,7 +15,7 @@ In this architecture, the data layer uses "Mappers" to bridge the gap between ex
    ```kotlin
    fun DriverResultDto.toDomain(): DriverResult = DriverResult(...)
    ```
-2. **Mapper Classes**: When a class implements a Repository interface from the domain layer, it should be named `*Mapper` if its primary role is data orchestration and transformation.
+2. **Mapper Classes**: When a class implements a Repository interface from the domain layer, it should be named `*Mapper` if its primary role is data orchestration and transformation. Follow the **One Mapper Per Class** rule to keep components focused and granular.
    ```kotlin
    class ResultsMapper(private val service: ResultsService) : ResultsRepository {
        override suspend fun getResults() = service.getResults().map { it.toDomain() }
