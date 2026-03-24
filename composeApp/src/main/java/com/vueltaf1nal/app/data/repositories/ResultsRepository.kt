@@ -1,4 +1,4 @@
-package com.vueltaf1nal.app.domain.repository
+package com.vueltaf1nal.app.data.repositories
 
 import com.vueltaf1nal.app.domain.models.DriverResult
 
