@@ -221,6 +221,35 @@
 
 <hr>
 
+<h2>🚀 Ejecución desde IntelliJ IDEA</h2>
+
+<p>Para poner en marcha el ecosistema <strong>VUELTA F1NAL</strong> desde IntelliJ, sigue estos pasos:</p>
+
+<ol>
+  <li><strong>Sincronización Inicial:</strong>
+    <ul>
+      <li>Haz clic en el icono del elefante con flechas azules (<strong>Sync Project with Gradle Files</strong>) para asegurar que todos los módulos y dependencias estén correctamente cargados.</li>
+    </ul>
+  </li>
+  <li><strong>Ejecutar el Engine (Backend):</strong>
+    <ul>
+      <li>En el menú desplegable de configuraciones de ejecución (esquina superior derecha), selecciona <code>engine [run]</code>.</li>
+      <li>Haz clic en el botón de <strong>Run (Play verde)</strong>. El servidor Ktor se iniciará en <code>http://localhost:8080</code>.</li>
+      <li><i>Alternativa:</i> Abre <code>engine/src/main/kotlin/com/vueltaf1nal/Application.kt</code> y haz clic en el icono de Play verde al lado de la función <code>main</code>.</li>
+    </ul>
+  </li>
+  <li><strong>Ejecutar la App (Frontend):</strong>
+    <ul>
+      <li>Una vez que el motor esté corriendo, selecciona <code>composeApp</code> en el menú de configuraciones.</li>
+      <li>Haz clic en el botón de <strong>Run (Play verde)</strong> para compilar y desplegar la app en tu dispositivo o emulador Android preferido.</li>
+    </ul>
+  </li>
+</ol>
+
+<p><i>Tip: Puedes monitorear los logs del servidor y de la app simultáneamente desde las pestañas de <strong>Run</strong> y <strong>Logcat</strong> de IntelliJ.</i></p>
+
+<hr>
+
 <h2>📬 Contacto</h2>
 
 <div align="center">
