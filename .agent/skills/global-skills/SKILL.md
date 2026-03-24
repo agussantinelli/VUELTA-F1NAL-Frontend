@@ -11,6 +11,7 @@ This skill serves as a central index for all architectural and development guide
 
 - **[adaptive-ui-compose](file:///c:/Users/Agus/IdeaProjects/VUELTA-F1NAL/.agent/skills/adaptive-ui-compose/SKILL.md)**: Handling different screen sizes in Android using WindowSizeClass and adaptive layouts.
 - **[clean-structure](file:///c:/Users/Agus/IdeaProjects/VUELTA-F1NAL/.agent/skills/clean-structure/SKILL.md)**: Component organization and modern Android/Compose principles for the FrontEnd.
+- [clean-structure-backend](file:///c:/Users/Agus/IdeaProjects/VUELTA-F1NAL/.agent/skills/clean-structure-backend/SKILL.md): Component organization and Ktor principles for the Backend (Engine).
 - **[code-quality](file:///c:/Users/Agus/IdeaProjects/VUELTA-F1NAL/.agent/skills/code-quality/SKILL.md)**: Guidelines for clean code, readability, and the "No Comments" policy.
 - **[compose-state-management](file:///c:/Users/Agus/IdeaProjects/VUELTA-F1NAL/.agent/skills/compose-state-management/SKILL.md)**: Guidelines for MutableStateFlow, StateView, state hoisting, and MVI/MVVM in Compose.
 - **[kotlin-flow-coroutines](file:///c:/Users/Agus/IdeaProjects/VUELTA-F1NAL/.agent/skills/kotlin-flow-coroutines/SKILL.md)**: Rules for async operations using Flow, Coroutines, and safe data collection.
