@@ -187,7 +187,16 @@
 │   │   └── MainActivity.kt                           # Punto de entrada (Host de Navegación)
 │   └── src/main/res/                                 # Recursos Android (layouts, themes, drawables)
 ├── engine/                                           # Backend: Servidor Ktor (Kotlin JVM)
-├── gradle/                                           # Configuración del Gradle Wrapper
+│   ├── src/main/kotlin/com/vueltaf1nal/
+│   │   ├── data/                                     # Capa de Datos: DTOs, Repositorios (Impl), Mappers
+│   │   │   ├── dtos/                                 # Serialización (API Contracts)
+│   │   │   ├── mappers/                              # Transformación (DTO <-> Domain)
+│   │   │   └── repositories/                          # Lógica de Datos persistente
+│   │   ├── domain/                                   # Capa de Dominio: Modelos, Lógica Pura
+│   │   │   └── models/                               # Entidades de Negocio
+│   │   └── routes/                                   # Capa de Entrada: Ktor Routes (Endpoints)
+│   ├── src/main/resources/                           # Recursos (Resources, Config)
+│   └── Application.kt                                # Punto de entrada (Config Server)
 ├── build.gradle.kts                                  # Configuración de compilación raíz
 ├── settings.gradle.kts                               # Definición de módulos del proyecto
 └── README.md                                         # Documentación principal del ecosistema
