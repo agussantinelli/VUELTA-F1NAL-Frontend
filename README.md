@@ -173,11 +173,10 @@
 <pre><code>VUELTA-F1NAL/
 ├── composeApp/                                       # Frontend: Aplicación Android (Jetpack Compose)
 │   ├── src/main/java/com/vueltaf1nal/app/
-│   │   ├── data/                                     # Capa de Datos: DTOs, Mappers, Repositorios
+│   │   ├── data/                                     # Capa de Datos: DTOs, Mappers, Remote
 │   │   │   ├── dtos/                                 # API Data Transfer Objects
-│   │   │   ├── mappers/                              # Orchestration & Transformation (*Mapper)
-│   │   │   ├── remote/                               # Servicios Ktor (NetworkClient, Services)
-│   │   │   └── repositories/                          # Repository Interfaces (Contracts)
+│   │   │   ├── mappers/                              # Data Providers & Transformation (*Mapper)
+│   │   │   └── remote/                               # Servicios Ktor (NetworkClient, Services)
 │   │   ├── domain/                                   # Capa de Dominio: Negocio e Identidad
 │   │   │   └── models/                               # Entidades de Negocio
 │   │   ├── ui/                                       # Capa de UI: Screens, ViewModels, Theme
