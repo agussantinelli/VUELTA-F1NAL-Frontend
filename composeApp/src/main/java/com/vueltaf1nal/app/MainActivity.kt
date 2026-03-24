@@ -14,15 +14,16 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.vueltaf1nal.app.ui.theme.*
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            F1TelemetryTheme {
+            VueltaF1nalTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = Color(0xFF0B0B0B) // Negro asfalto
+                    color = MaterialTheme.colorScheme.background
                 ) {
                     TelemetryScreen()
                 }
@@ -41,7 +42,7 @@ fun TelemetryScreen() {
     ) {
         Text(
             text = "VUELTA F1NAL",
-            color = Color.Red,
+            color = RacingRed,
             fontSize = 12.sp,
             fontWeight = FontWeight.Bold,
             letterSpacing = 2.sp
@@ -58,20 +59,20 @@ fun TelemetryScreen() {
 fun DriverCard(name: String, team: String, speed: String, lap: String) {
     Card(
         shape = RoundedCornerShape(16.dp),
-        colors = CardDefaults.cardColors(containerColor = Color(0xFF1A1A1A)),
+        colors = CardDefaults.cardColors(containerColor = CardDark),
         modifier = Modifier.fillMaxWidth()
     ) {
         Column(modifier = Modifier.padding(20.dp)) {
             Text(text = team, color = Color.Gray, fontSize = 10.sp)
             Text(text = name, color = Color.White, fontSize = 24.sp, fontWeight = FontWeight.ExtraBold)
 
-            Divider(modifier = Modifier.padding(vertical = 12.dp), color = Color(0xFF333333))
+            Divider(modifier = Modifier.padding(vertical = 12.dp), color = DividerGray)
 
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                TelemetryItem("SPEED", "$speed KM/H", Color(0xFF00FF00))
+                TelemetryItem("SPEED", "$speed KM/H", TelemetryGreen)
                 TelemetryItem("LAP", lap, Color.White)
             }
         }
