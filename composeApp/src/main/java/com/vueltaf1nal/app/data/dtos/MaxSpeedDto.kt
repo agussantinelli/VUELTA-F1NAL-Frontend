@@ -1,4 +1,4 @@
-package com.vueltaf1nal.app.data.models.api
+package com.vueltaf1nal.app.data.dtos
 
 import kotlinx.serialization.Serializable
 
