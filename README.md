@@ -1,4 +1,4 @@
-<h1 align="center">🏎️ VUELTA F1NAL — Full Stack Project</h1>
+<h1 align="center">🏎️ VUELTA F1NAL - Full Stack Project</h1>
 
 <p align="center">
   <img src="./public/logo_oficial.png" alt="Vuelta F1nal Logo" width="200" height="200">
