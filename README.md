@@ -173,18 +173,18 @@
 <pre><code>VUELTA-F1NAL/
 ├── composeApp/                                       # Frontend: Aplicación Android (Jetpack Compose)
 │   ├── src/main/java/com/vueltaf1nal/app/
-│   │   ├── data/                                     # Capa de Datos: DTOs, Repositorios (Impl), APIs
-│   │   │   ├── models/api/                           # DTOs (Serialización)
-│   │   │   ├── remote/                               # Servicios Ktor (NetworkClient, ResultsService, TopSpeedsService)
-│   │   │   └── repository/                            # Implementaciones de Repositorios (ResultsRepositoryImpl, etc.)
-│   │   ├── domain/                                   # Capa de Dominio: Modelos, Interfaces
-│   │   │   ├── models/                               # Modelos de Negocio
-│   │   │   └── repository/                            # Interfaces de Repositorios (Abstracción)
+│   │   ├── data/                                     # Capa de Datos: DTOs, Mappers, Repositorios
+│   │   │   ├── dtos/                                 # API Data Transfer Objects
+│   │   │   ├── mappers/                              # Orchestration & Transformation (*Mapper)
+│   │   │   ├── remote/                               # Servicios Ktor (NetworkClient, Services)
+│   │   │   └── repositories/                          # Repository Interfaces (Contracts)
+│   │   ├── domain/                                   # Capa de Dominio: Negocio e Identidad
+│   │   │   └── models/                               # Entidades de Negocio
 │   │   ├── ui/                                       # Capa de UI: Screens, ViewModels, Theme
-│   │   │   ├── screens/                              # Composable Screens (ResultListScreen, TopSpeedsScreen)
+│   │   │   ├── screens/                              # Composable Screens (ResultListScreen, etc.)
 │   │   │   ├── theme/                                # Design System (Color, Type, Theme)
 │   │   │   └── viewmodel/                            # Gestión de Estado (MainViewModel)
-│   │   └── MainActivity.kt                           # Punto de entrada (Host de Navegación)
+│   │   └── MainActivity.kt                           # Punto de entrada (Manual DI & Nav Host)
 │   └── src/main/res/                                 # Recursos Android (layouts, themes, drawables)
 ├── engine/                                           # Backend: Servidor Ktor (Kotlin JVM)
 │   ├── src/main/kotlin/
@@ -211,14 +211,16 @@
 <p>Este proyecto utiliza un sistema de <strong>Skills</strong> (guías avanzadas) para asegurar que cualquier desarrollo (humano o por IA) siga estrictamente los estándares arquitectónicos del proyecto:</p>
 
 <ul>
-    <li><strong>🏗️ Arquitectura Modular:</strong> Reglas sobre la separación de capas (Data, Domain, UI) y el principio de <b>Granularidad (Uno por Clase)</b> para evitar dependencias cruzadas.</li>
-    <li><strong>📱 Compose State Management:</strong> Gestión de estado reactivo con <code>MutableStateFlow</code>, State Hoisting y arquitectura UDF (Unidirectional Data Flow).</li>
-    <li><strong>🌊 Flow & Coroutines:</strong> Estándar para operaciones asíncronas, manejo de scopes y recolección de flujos segura con el ciclo de vida de Android.</li>
-    <li><strong>📐 Adaptive UI:</strong> Estrategias para diseños responsivos utilizando <code>WindowSizeClass</code> para (Compact, Medium, Expanded).</li>
-    <li><strong>🧹 Clean Structure (Frontend):</strong> Organización de paquetes en <code>composeApp/</code> y estándares de nomenclatura para componentes y ViewModels.</li>
-    <li><strong>⚙️ Clean Structure (Backend):</strong> Organización modular del <code>engine/</code> (Routes -> Repositories -> Mappers -> DTOs).</li>
-    <li><strong>🚀 Ktor Engine Logic:</strong> Normas para el desarrollo del motor, incluyendo serialización eficiente y aislamiento de la lógica de predicción.</li>
-    <li><strong>🛠️ Skill Generator:</strong> Herramienta para la creación de nuevas guías que expandan el conocimiento operativo del sistema.</li>
+    <li><strong>🏷️ Naming Conventions:</strong> Estándares de nomenclatura para carpetas (plural) y capas (`dtos`, `mappers`, `repositories`, `models`).</li>
+    <li><strong>🧩 Mappers Logic:</strong> Patrón de transformación DTO -> Domain con funciones de extensión y el principio de <b>One Mapper Per Class</b>.</li>
+    <li><strong>🏗️ Arquitectura Modular:</strong> Reglas sobre la separación de capas y el flujo de datos unidireccional.</li>
+    <li><strong>📱 Compose State Management:</strong> Gestión de estado reactivo con <code>MutableStateFlow</code> y UDF.</li>
+    <li><strong>🌊 Flow & Coroutines:</strong> Estándar para operaciones asíncronas y recolección segura de flujos.</li>
+    <li><strong>📐 Adaptive UI:</strong> Estrategias para diseños responsivos utilizando <code>WindowSizeClass</code>.</li>
+    <li><strong>🧹 Clean Structure (Frontend):</strong> Organización de paquetes en <code>composeApp/</code> siguiendo la regla de "un solo repositorio".</li>
+    <li><strong>⚙️ Clean Structure (Backend):</strong> Organización modular del <code>engine/</code> unificada con los estándares del frontend.</li>
+    <li><strong>🚀 Ktor Engine Logic:</strong> Normas para el desarrollo del motor y serialización eficiente.</li>
+    <li><strong>🛠️ Skill Generator:</strong> Herramienta para la creación de nuevas guías operativas.</li>
 </ul>
 
 <hr>
